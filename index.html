@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chronometer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #chrono {
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Chronometer from 10 November 2023, 11:57</h1>
+<div id="chrono">Loading...</div>
+
+<script>
+    function updateChrono() {
+        const startDate = new Date('2023-11-10T11:57:00');
+        const now = new Date();
+        
+        const diff = now - startDate;
+
+        const months = Math.floor(diff / (1000 * 60 * 60 * 24 * 30.4375));
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24)) % 30;
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        document.getElementById('chrono').innerHTML = `${months} months, ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+    }
+
+    setInterval(updateChrono, 1000);
+    updateChrono();
+</script>
+
+</body>
+</html>
