@@ -1,68 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>I LOVE YOU<3</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
-        #chrono {
-            font-size: 2em;
-        }
-        #text {
-            margin-top: 20px;
-            font-size: 1.5em;
-        }
-    </style>
+    <title>Time</title>
+    <h1>Broke up</h1>
+    <h1>Time: 1 year, 11 months 26 days, 5 hours, 55 minutes, 23 seconds</h1>
 </head>
-<body>
-
-<h1>We are together by:</h1>
-<div id="chrono">Loading...</div>
-<div id="text">But I love you and I will always love you <3</div>
-
-<script>
-    function updateChrono() {
-        const startDate = new Date('2023-11-08T11:57:00');
-        const now = new Date();
-        
-        let years = now.getFullYear() - startDate.getFullYear();
-        let months = now.getMonth() - startDate.getMonth();
-        let days = now.getDate() - startDate.getDate();
-        let hours = now.getHours() - startDate.getHours();
-        let minutes = now.getMinutes() - startDate.getMinutes();
-        let seconds = now.getSeconds() - startDate.getSeconds();
-        
-        if (seconds < 0) {
-            seconds += 60;
-            minutes--;
-        }
-        if (minutes < 0) {
-            minutes += 60;
-            hours--;
-        }
-        if (hours < 0) {
-            hours += 24;
-            days--;
-        }
-        if (days < 0) {
-            const previousMonth = new Date(now.getFullYear(), now.getMonth(), 0);
-            days += previousMonth.getDate();
-            months--;
-        }
-        if (months < 0) {
-            months += 12;
-            years--;
-        }
-
-        document.getElementById('chrono').innerHTML = `${years} years, ${months} months, ${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
-    }
-
-    setInterval(updateChrono, 1000);
-    updateChrono();
-</script>
-
-</body>
 </html>
